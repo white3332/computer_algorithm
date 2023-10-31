@@ -140,6 +140,7 @@ def find_unique_combinations_with_zeros(cost_matrix_step5):
             
         if row_has_zero == True and col_has_zero == True:
             print("모든 행과 열에서 하나의 0을 가지는 조합을 찾을 수 없음\n 최적 조합을 찾을 수 없음")
+            return []
         elif row_has_zero == False or col_has_zero == False:
             result.append(item)
             possible_combinations.remove(item)
@@ -194,6 +195,8 @@ cost_matrix = pd.DataFrame([[10, 25, 15, 20],
                             [15, 30, 5, 15],
                             [35, 20, 12, 24],
                             [17, 25, 24, 20]])
+cost_matrix = pd.DataFrame([[10, 25],
+                            [10, 25]])
 
 cost_matrix_step2 = sub_matrix(cost_matrix)
 row_matrix_step3, column_matrix_step3 = initialize_assignment_matrix(cost_matrix_step2)
